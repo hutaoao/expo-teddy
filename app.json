@@ -1,7 +1,33 @@
 {
   "expo": {
-    "name": "teddy",
+    "name": "泰迪",
     "slug": "teddy",
-    "version": "1.0.0"
+    "version": "1.0.1",
+    "scheme": "myapp",
+    "background": "#ffffff",
+    "icon": "./assets/images/icon.png",
+    "splash": {
+      "image": "./assets/images/splash.png",
+      "resizeMode": "cover"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-font"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "3c903649-f5c0-4a0d-b647-cf7f5930a883"
+      }
+    },
+    "runtimeVersion": "1.0.0",
+    "updates": {
+      "url": "https://u.expo.dev/3c903649-f5c0-4a0d-b647-cf7f5930a883"
+    },
+    "android": {
+      "package": "com.expo.teddy"
+    },
+    "ios": {
+      "bundleIdentifier": "com.expo.teddy"
+    }
   }
 }

@@ -1,4 +1,4 @@
-package com.teddy
+package com.expo.teddy
 
 import android.os.Build
 import android.os.Bundle

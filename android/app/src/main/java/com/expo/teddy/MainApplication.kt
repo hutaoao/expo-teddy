@@ -1,4 +1,4 @@
-package com.teddy
+package com.expo.teddy
 
 import android.app.Application
 import android.content.res.Configuration
