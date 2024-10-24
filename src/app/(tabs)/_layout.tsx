@@ -18,6 +18,7 @@ export default function TabLayout() {
         headerTitleStyle: {
           fontWeight: 'bold',
         },
+        headerTitleAlign: 'center',
         tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
       }}
     >
