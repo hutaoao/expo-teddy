@@ -4,6 +4,7 @@ import {Stack} from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import {useEffect} from 'react';
 import {AntdIcon} from '@/components/AntdIcon'
+import {SessionProvider} from "@/provider/ctx";
 
 import {useColorScheme} from '@/hooks/useColorScheme';
 
@@ -29,22 +30,24 @@ export default function RootLayout() {
 
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack
-        screenOptions={{
-          headerStyle: {
-            backgroundColor: '#3f829b',
-          },
-          headerTintColor: '#fff',
-          headerTitleStyle: {
-            fontWeight: 'bold',
-          },
-          headerTitleAlign: 'center',
-          headerLeft: () => <AntdIcon name='left' color='blue'/>
-        }}
-      >
-        <Stack.Screen name="(tabs)" options={{headerShown: false}}/>
-        <Stack.Screen name="+not-found"/>
-      </Stack>
+      <SessionProvider>
+        <Stack
+          screenOptions={{
+            headerStyle: {
+              backgroundColor: '#3f829b',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+            headerTitleAlign: 'center',
+            headerLeft: () => <AntdIcon name='left' color='blue'/>
+          }}
+        >
+          <Stack.Screen name="(tabs)" options={{headerShown: false}}/>
+          <Stack.Screen name="+not-found"/>
+        </Stack>
+      </SessionProvider>
     </ThemeProvider>
   );
 }

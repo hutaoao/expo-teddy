@@ -2,9 +2,11 @@ import {Image, Text, View, StyleSheet, TouchableOpacity, ScrollView} from 'react
 import {useSafeAreaInsets} from "react-native-safe-area-context";
 import {AntdIcon} from '@/components/AntdIcon';
 import {router} from 'expo-router';
+import {useSession} from "@/provider/ctx";
 
 export default function UpdatesDemo() {
   const {top} = useSafeAreaInsets();
+  const {signOut} = useSession();
 
   return (
     <View style={styles.container}>
@@ -58,6 +60,14 @@ export default function UpdatesDemo() {
           <Text style={styles.itemView_title}>404页面测试</Text>
           <Text style={styles.proLab}>10KB</Text>
           <AntdIcon name="right" size={20} color="#878F9B"/>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.btnView}
+          onPress={() => {
+            signOut()
+          }}
+        >
+          <Text style={styles.btnText}>退出登录</Text>
         </TouchableOpacity>
       </ScrollView>
     </View>
@@ -115,4 +125,14 @@ const styles = StyleSheet.create({
     color: '#c3c1c1',
     marginRight: 10
   },
+  btnView: {
+    marginTop: 100,
+    backgroundColor: '#fff',
+    paddingVertical: 15,
+    alignItems: 'center',
+  },
+  btnText: {
+    fontSize: 20,
+    fontWeight: 'bold',
+  }
 })
