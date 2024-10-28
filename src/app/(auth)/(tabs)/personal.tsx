@@ -1,8 +1,8 @@
-import {Image, Text, View, StyleSheet, TouchableOpacity, ScrollView} from 'react-native';
-import {useSafeAreaInsets} from "react-native-safe-area-context";
-import {AntdIcon} from '@/components/AntdIcon';
 import {router} from 'expo-router';
 import {useSession} from "@/provider/ctx";
+import {AntdIcon} from '@/components/AntdIcon';
+import {useSafeAreaInsets} from "react-native-safe-area-context";
+import {Image, Text, View, StyleSheet, TouchableOpacity, ScrollView} from 'react-native';
 
 export default function UpdatesDemo() {
   const {top} = useSafeAreaInsets();

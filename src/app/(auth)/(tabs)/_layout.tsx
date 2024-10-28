@@ -1,25 +1,10 @@
-import {Tabs, Redirect} from 'expo-router';
-import React from 'react';
-import {Text} from 'react-native';
-
+import {Tabs} from 'expo-router';
 import {TabBarIcon} from '@/components/navigation/TabBarIcon';
 import {Colors} from '@/constants/Colors';
 import {useColorScheme} from '@/hooks/useColorScheme';
-import {useSession} from '@/provider/ctx';
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
-  const {session, isLoading} = useSession();
-
-  if (isLoading) {
-    return <Text>Loading...</Text>;
-  }
-
-  if (!session) {
-    // On web, static rendering will stop here as the user is not authenticated
-    // in the headless Node process that the pages are rendered in.
-    return <Redirect href="/login"/>;
-  }
 
   return (
     <Tabs
@@ -52,6 +37,21 @@ export default function TabLayout() {
           tabBarIcon: ({color, focused}) => (
             <TabBarIcon name={focused ? 'apps' : 'apps-outline'} color={color}/>
           ),
+        }}
+      />
+      <Tabs.Screen
+        name="message"
+        options={{
+          title: '消息中心',
+          tabBarBadge: '12',
+          tabBarBadgeStyle: {
+            color: '#ffffff',
+            backgroundColor: '#ff0000'
+          },
+          tabBarIcon: ({color, focused}) => (
+            <TabBarIcon name={focused ? 'at-circle' : 'at-circle-outline'} color={color}/>
+          ),
+          headerShown: false
         }}
       />
       <Tabs.Screen

@@ -7,7 +7,7 @@ export default function SignIn() {
   const {signIn} = useSession();
   return (
     <>
-      <Stack.Screen options={{headerShown: false, animation: 'slide_from_bottom'}}/>
+      <Stack.Screen options={{animation: 'slide_from_bottom'}}/>
       <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
         <TouchableOpacity
           style={{borderWidth: 1, paddingVertical: 10, paddingHorizontal: 30}}
