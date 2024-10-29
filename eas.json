@@ -7,17 +7,29 @@
     "development": {
       "developmentClient": true,
       "distribution": "internal",
-      "channel": "development"
+      "channel": "development",
+      "env": {
+        "APP_NAME": "My App (development)",
+        "EXPO_PUBLIC_API_URL": "https://api.preview.com"
+      }
     },
     "preview": {
       "distribution": "internal",
-      "channel": "preview"
+      "channel": "preview",
+      "env": {
+        "APP_NAME": "My App (preview)",
+        "EXPO_PUBLIC_API_URL": "https://api.preview.com"
+      }
     },
     "production": {
       "autoIncrement": true,
       "channel": "production",
       "android": {
         "buildType": "apk"
+      },
+      "env": {
+        "APP_NAME": "My App (production)",
+        "EXPO_PUBLIC_API_URL": "https://api.production.com"
       }
     }
   },
